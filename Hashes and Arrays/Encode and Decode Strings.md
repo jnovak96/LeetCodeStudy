@@ -10,14 +10,8 @@ Explanation:
 One possible encode method is: "lint:;code:;love:;you
 ```
 ?
-## Method 1
-**TC:** ``??
-**SC:** ``?? 
-1. Encode strings in format (length)#(string)
-2. Decode by checking length value and parsing chars after delimeter "#"
-3. Save strings to an array and return array
-<!--SR:!2022-09-05,4,270-->
-
+## Array Method
+Encode strings in format (length)#(string). Decode by checking length value and parsing chars after delimeter "#".
 ## Code
 ```python
 class Solution:

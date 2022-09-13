@@ -9,23 +9,24 @@ You must write an algorithm that runs in `O(n)` time.
 **Explanation:** The longest consecutive elements sequence is `[1, 2, 3, 4]`. Therefore its length is 4.
 ```
 ?
-## Method 1
-**TC:** ``??
-**SC:** ``?? 
-1. Step 1
-2. Step 2
-3. Step 3
-## Method 2
-**TC:** ``??
-**SC:** ``?? 
-1. Step 1
-2. Step 2
-3. Step 3
+## Set Solution
+Create a set with all of the numbers in the input array. Check the elements in the array against the set to see if they have left neighbors and if they don't track the length while checking that the next value exists in the set. Return the highest length value.
+## Diagram
+![[Pasted image 20220912014651.png]]
 ## Code
 ```python
 class Solution:
-    def function(self):
-    #Insert Solution here
+    def longestConsecutive(self, nums: List[int]) -> int:
+        numSet = set(nums)
+        longest = 0
+        for n in nums:
+            #check if value is start of a sequence
+            if (n - 1) not in numSet:
+                length = 0
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(length, longest)
+        return longest
 ```
 <!--SR:!2022-09-02,1,230-->
 

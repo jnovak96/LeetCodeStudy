@@ -1,22 +1,19 @@
 #flashcards 
 Given an integer array `nums`, return `true` if any value appears **at least twice** in the array, and return `false` if every element is distinct.
 ?
-`HashSet` store each value and check for duplicates - O(n) time and memory
-```c++
+## Hashset Solution
+Run through array and check if each value is in the set. Add the value to the set if it does not already exist.
+## Diagram
+![[Pasted image 20220911015655.png]]
+## Code
+```python
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
 
-bool containsDuplicate(vector<int>& nums) {
-        unordered_set <int> set;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if (set.find(nums[i]) != set.end())
-            {
-                return true;
-            }
-            else
-            {
-                set.insert(nums[i]);
-            }
-        }
-        return false;
-    }
-    ```
+        for n in nums:
+            if n in hashset:
+                return True
+            hashset.add(n)
+        return False
+```    ```

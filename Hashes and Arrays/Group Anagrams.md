@@ -8,7 +8,9 @@ Input: strs = ["eat","tea","tan","ate","nat","bat"]
 Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 ```
 ?
-## Hashmap Method
+## Hashmap Solution
+Create a hashmap that will use a count[26] array as a key and a list of all words that have the same count[] as it's values. check the count for each word and append the word after.
+## Instructions
 **TC:** ``O(m*n)
 **SC:** ``?? 
 1. Create a hashmap to map the count of each character to the list of anagrams
@@ -18,6 +20,8 @@ Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 		1. If a char appears, add 1 to value at the char's index in count
 	3. Add the string to the hashmap based on it's count as index ``tuple(count):string 
 3. return the results 
+## Diagram
+![[Pasted image 20220911022347.png]]
 ## Code
 ```python
 class Solution:
